@@ -13,14 +13,9 @@ df = pd.DataFrame({'value':val_list})
 topic = st.text_input("Enter the topic name")
 def process_message(message): 
     t = st.empty() 
-    #time of message retrieval 
-    #start = time.strftime("%Y-%m-%d %H:%M:%S")
     value = message.value() 
     dval = json.loads(value) 
-    #st.write(start)
-    #val_list.append(dval)
     st.markdown(dval)
-    #df2 = pd.DataFrame({'value':[vall]})
     print(dval) 
 if st.button('Consume:'):
     conf = {'bootstrap.servers': 'localhost:9092',
